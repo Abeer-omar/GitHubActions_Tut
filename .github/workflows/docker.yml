@@ -1,0 +1,26 @@
+name: exploring and secrets
+on:
+    push:
+env:  # to create variables[workflow level]
+    username: AbeerOmar
+    loc: Ismailia
+    pass: 444
+jobs:
+        docker-login:
+            #env:  # to create variables[job level]
+             #       username: AbeerOmar
+              #      loc: Ismailia
+            runs-on: ubuntu-latest
+            steps:
+                - name: Login to Docker Hub
+                
+                  #env:  # to create variables[Step level]
+                   # username: AbeerOmar
+                    #loc: Ismailia
+                  uses: docker/login-action@v3
+                  with:
+                    username: $username
+                    password: 5165
+
+                - name:
+                  run: docker login --username=$username
