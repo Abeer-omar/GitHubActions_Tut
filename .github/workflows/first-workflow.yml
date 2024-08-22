@@ -1,7 +1,7 @@
 name: my first wf
 on: push
 jobs:
-    first_job:
+    build_job:
         runs-on: ubuntu-latest  #Will Run On Container
         steps:
             - name: Checkout
@@ -10,21 +10,21 @@ jobs:
             - name: welcome msg
               run: echo "Hello Data Engineer"
 
-            - name: list files
-              run:
-                |
-                chmod +x script.sh
-                ./script.sh
-
             - name: install cowsay program
               run: sudo apt-get install cowsay -y
 
             - name: execute cowsay cmd
               run: cowsay -f dragon "Run For Cover, I am a Dragon....RAWR" >> dragon.txt
-
+    
+    test_job:
+        runs-on: ubuntu-latest
+        steps:
             - name: Test File Exists
               run: grep -i "dragon" dragon.txt
 
+    deploy_job:
+        runs-on: ubuntu-latest
+        steps:
             - name: Read File
               run: cat dragon.txt
 
