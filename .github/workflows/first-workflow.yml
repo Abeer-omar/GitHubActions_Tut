@@ -4,7 +4,13 @@ jobs:
     first_job:
         runs-on: ubuntu-latest  #Will Run On Container
         steps:
+            - name: Checkout
+              uses: actions/checkout@v4.1.7
+
             - name: welcome msg
               run: echo "Hello Data Engineer"
+              
             - name: list files
               run: ls
+            
+          
