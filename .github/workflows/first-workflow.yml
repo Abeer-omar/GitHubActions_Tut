@@ -6,3 +6,5 @@ jobs:
         steps:
             - name: welcome msg
               run: echo "Hello Data Engineer"
+            - name: list files
+              run: ls
