@@ -1,4 +1,4 @@
-name: exploring and secrets
+name: exploring and secrets2
 on:
     push:
 jobs:
